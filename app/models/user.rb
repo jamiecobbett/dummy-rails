@@ -1,3 +1,5 @@
 class User < ApplicationRecord
-  validate :name, presence: true, limit: 255
+  include Clearance::User
+
+  validates :name, presence: true, length: 255
 end
